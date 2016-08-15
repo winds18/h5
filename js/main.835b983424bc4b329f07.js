@@ -152,7 +152,8 @@ webpackJsonp([3], [function(e, t, i) {
                     var n = void 0,
                         a = t ? t : "src",
                         o = i ? i + "w_" : "";
-                    return e.indexOf("aliyuncs") >= 0 || !this.isAppNormalMode() ? e : (n = this.isIOS() || this.isFF() ? "80Q." + a : ".webp", e + "@" + o + n)
+                    return e
+                    //return e.indexOf("aliyuncs") >= 0 || !this.isAppNormalMode() ? e : (n = this.isIOS() || this.isFF() ? "80Q." + a : ".webp", e + "@" + o + n)
                 }
             }, {
                 key: "getUid",
@@ -257,7 +258,8 @@ webpackJsonp([3], [function(e, t, i) {
             }, {
                 key: "getImgUrl",
                 value: function(e) {
-                    return e ? 0 === e.trim().toLowerCase().indexOf("http://") || 0 === e.trim().toLowerCase().indexOf("https://") ? e : "aliyun" === s["default"].getUrlParameter("env") ? "http://makapicture.oss-cn-beijing-internal.aliyuncs.com/" + e : "http://img1.maka.im/" + e : "http://img1.maka.im"
+                    return e
+                    //return e ? 0 === e.trim().toLowerCase().indexOf("http://") || 0 === e.trim().toLowerCase().indexOf("https://") ? e : "aliyun" === s["default"].getUrlParameter("env") ? "http://makapicture.oss-cn-beijing-internal.aliyuncs.com/" + e : "http://img1.maka.im/" + e : "http://img1.maka.im"
                 }
             }, {
                 key: "addCrop",
@@ -267,7 +269,8 @@ webpackJsonp([3], [function(e, t, i) {
                         a = t.width < 0 ? 0 : t.width,
                         o = t.height < 0 ? 0 : t.height,
                         r = void 0;
-                    return e.indexOf("aliyuncs") >= 0 && (e = e.replace("maka-test.oss-cn-beijing.aliyuncs.com", "test.img.maka.im")), r = c["default"].isIOS() || c["default"].isFF() ? ".src" : ".webp", e + "@" + i + "-" + n + "-" + a + "-" + o + "a_90Q" + r
+                    return e
+                    //return e.indexOf("aliyuncs") >= 0 && (e = e.replace("maka-test.oss-cn-beijing.aliyuncs.com", "test.img.maka.im")), r = c["default"].isIOS() || c["default"].isFF() ? ".src" : ".webp", e + "@" + i + "-" + n + "-" + a + "-" + o + "a_90Q" + r
                 }
             }, {
                 key: "isGif",
@@ -284,7 +287,8 @@ webpackJsonp([3], [function(e, t, i) {
             }, {
                 key: "getShapeUrl",
                 value: function(e) {
-                    return "http://res.maka.im/shapeSVG/" + e
+                    return e
+                    //return "http://res.maka.im/shapeSVG/" + e
                 }
             }, {
                 key: "getPhoneCallUrl",
@@ -309,7 +313,8 @@ webpackJsonp([3], [function(e, t, i) {
             }, {
                 key: "getMusicUrl",
                 value: function(e) {
-                    return 1 === parseInt(e.version) && ("" + e.id).indexOf("/") > 0 ? this.isHttpHead(e.id) ? e.id : "production" === this.getEnvironment() ? "http://res.maka.im/" + e.id : "http://maka-test.oss-cn-beijing.aliyuncs.com/" + e.id : "http://m1.maka.im/gfilemusic/" + e.id + ".mp3"
+                    return e.id
+                    //return 1 === parseInt(e.version) && ("" + e.id).indexOf("/") > 0 ? this.isHttpHead(e.id) ? e.id : "production" === this.getEnvironment() ? "http://res.maka.im/" + e.id : "http://maka-test.oss-cn-beijing.aliyuncs.com/" + e.id : "http://m1.maka.im/gfilemusic/" + e.id + ".mp3"
                 }
             }, {
                 key: "getContentJSONUrl",
@@ -325,7 +330,8 @@ webpackJsonp([3], [function(e, t, i) {
                             var o = s["default"].getUrlParameter("version");
                             o = o ? "&version=" + o : "", e = "/api/requestVersionedTemplate/" + i + "?dataType=pdata&v=" + t + o
                         } else e = "/api/" + i + "?dataType=pdata&v=" + t;
-                        return "aliyun" !== s["default"].getUrlParameter("env") && ("test" === n ? e = "http://test.api.maka.im" + e : "production" === n && (e = "http://api.maka.im" + e)), e
+                        return e;
+                        //return "aliyun" !== s["default"].getUrlParameter("env") && ("test" === n ? e = "http://test.api.maka.im" + e : "production" === n && (e = "http://api.maka.im" + e)), e
                     }
                     return this.isAppNormalMode() ? (e = "/user/" + a + "/event/" + i + "/" + i + "_v" + t + ".json?hash=" + s["default"].getHashCode("" + window.location.hostname), "test" === n || "development" === n ? e = "http://maka-test.oss-cn-beijing.aliyuncs.com" + e : "production" === n && (e = "http://res.maka.im" + e)) : (e = "/api/event/" + i + "?dataType=all&ts=" + t, "test" === n ? e = "http://test.api.maka.im" + e : "production" === n && (e = "http://api.maka.im" + e)), e
                 }
@@ -333,7 +339,8 @@ webpackJsonp([3], [function(e, t, i) {
                 key: "getEnvironment",
                 value: function() {
                     var e = void 0;
-                    return e = window.location.host.indexOf("localhost") >= 0 || window.location.host.indexOf("192.") >= 0 ? "development" : window.location.host.indexOf("test") >= 0 ? "test" : "production"
+                    //return e = window.location.host.indexOf("localhost") >= 0 || window.location.host.indexOf("192.") >= 0 ? "development" : window.location.host.indexOf("test") >= 0 ? "test" : "production"
+                    return "production";
                 }
             }, {
                 key: "getSPEventUrl",
@@ -2955,18 +2962,22 @@ webpackJsonp([3], [function(e, t, i) {
                     if (g["default"].send("pageLoadStart", e.index), e.bgpic && "0" !== e.bgpic && " " !== e.bgpic) try {
                         var o = void 0,
                             r = {};
-                        if (console.log("log" + e.bgpic), 0 === e.bgpic.indexOf("user/")) o = window.Config.getImgUrl(e.bgpic);
-                        else if (e.bgpic.indexOf("test.img.maka.im") > 0) o = e.bgpic;
-                        else if (e.bgpic.indexOf("img1") > 0) o = e.bgpic;
-                        else {
-                            var l = /id\/[A-Z0-9]{0,40}/,
+                        if (console.log("log " + e.bgpic), 0 === e.bgpic.indexOf("user/")){
+                          o = window.Config.getImgUrl(e.bgpic);
+                        } else if (e.bgpic.indexOf("test.img.maka.im") > 0){
+                          o = e.bgpic;
+                        } else if (e.bgpic.indexOf("img1") > 0){
+                          o = e.bgpic;
+                        } else {
+                            o = e.bgpic;
+                            /*var l = /id\/[A-Z0-9]{0,40}/,
                                 u = l.exec(e.bgpic),
                                 f = /\.jpg|\.png|\.jpeg|\.gif/i,
                                 h = f.exec(e.bgpic),
                                 m = "";
                             h && (m = h[0]);
                             var w = u[0].substr(3) + m;
-                            o = window.Config.getImgUrl(w)
+                            o = window.Config.getImgUrl(w)*/
                         }
                         e.bgpicCropData && !window.Config.isGif(e.bgpic) && window.Config.isAppNormalMode() ? o = window.Config.addCrop(o, e.bgpicCropData) : window.Config.isGif(e.bgpic) || (o = A["default"].addTail(o)), r.inw = e.bgpicwidth;
                         var k = b.loadImage(o, r, e);
@@ -3020,7 +3031,8 @@ webpackJsonp([3], [function(e, t, i) {
                                     break;
                                 case "pshape":
                                     if (!a.shape) break;
-                                    "0" === a.shape && (a.shape = "1.svg"), a.shape.indexOf("/SVG/") < 0 && (a.shape = "svg/Default/SVG/" + a.shape);
+                                    "0" === a.shape && (a.shape = "1.svg"), a.shape.indexOf("/SVG/") < 0 && (a.shape = "" + a.shape);
+                                    //"0" === a.shape && (a.shape = "1.svg"), a.shape.indexOf("/SVG/") < 0 && (a.shape = "svg/Default/SVG/" + a.shape);
                                     var g = b.loadSvgImg(window.Config.getShapeUrl(a.shape));
                                     g = g.then(function(e) {
                                         var t = (0, s["default"])(e);
@@ -9660,9 +9672,13 @@ webpackJsonp([3], [function(e, t, i) {
     }
 
     function r(e) {
-        delete e.height, e.rotate = parseInt(e.rotate), e.shape && "0" !== e.shape || (e.shape = "1.svg"), e.shape.indexOf("/SVG/") < 0 && (e.shape = "svg/Default/SVG/" + e.shape), e.h = e.h < 0 ? 0 : e.h, e.shapecolor && (e.colorScheme = {
-            color1: e.shapecolor
-        }, delete e.shapecolor)
+        delete
+          e.height,
+          e.rotate = parseInt(e.rotate),
+          e.shape && "0" !== e.shape || (e.shape = "1.svg"),
+          e.shape.indexOf("/SVG/") < 0 && (e.shape = "" + e.shape),
+          //e.shape.indexOf("/SVG/") < 0 && (e.shape = "svg/Default/SVG/" + e.shape),
+          e.h = e.h < 0 ? 0 : e.h, e.shapecolor && (e.colorScheme = {color1: e.shapecolor}, delete e.shapecolor)
     }
 
     function s(e) {
